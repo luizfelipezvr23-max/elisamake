@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make com a Lili e Teté - Universo Lilás, Rosa & Glitter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lilas: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                        },
+                        rosa: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        },
+                        glitter: {
+                            gold: '#ffd700',
+                            sparkle: '#f0abfc',
+                            glow: '#fae8ff'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Fredoka', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'sparkle': 'sparkle 2s ease-in-out infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                    },
+                    keyframes: {
+                        sparkle: {
+                            '0%, 100%': { opacity: '0.3', transform: 'scale(0.8) rotate(0deg)' },
+                            '50%': { opacity: '1', transform: 'scale(1.2) rotate(180deg)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(216, 180, 254, 0.6), 0 0 30px rgba(251, 113, 133, 0.4)' },
+                            '50%': { boxShadow: '0 0 25px rgba(216, 180, 254, 0.9), 0 0 50px rgba(251, 113, 133, 0.7)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #fdf4ff 0%, #f5e6fa 50%, #fff0f5 100%);
+            color: #3b0764;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Fredoka', cursive;
+        }
+
+        /* Subtle glitter overlay background */
+        .glitter-bg {
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #f472b6, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #c084fc, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 80px 20px, #fef08a, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 90px, #f43f5e, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 40px, #e9d5ff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        .glitter-btn {
+            background: linear-gradient(90deg, #ec4899, #a855f7, #ec4899);
+            background-size: 200% auto;
+            transition: 0.4s;
+        }
+
+        .glitter-btn:hover {
+            background-position: right center;
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(233, 213, 255, 0.6);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f3e8ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c084fc;
+            border-radius: 9999px;
+        }
+
+        /* Sparkle items floating */
+        .sparkle-star {
+            position: absolute;
+            pointer-events: none;
+            animation: sparkle 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="glitter-bg min-h-screen flex flex-col custom-scrollbar">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-card border-b border-rosa-200/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LOGO: Lili e Teté (Curly Blonde & Straight Blonde) -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-14 h-14 rounded-full p-0.5 bg-gradient-to-r from-rosa-400 via-lilas-400 to-rosa-500 animate-pulse-glow flex items-center justify-center overflow-hidden bg-white shadow-md">
+                    <!-- SVG Avatar Logo: Lili (Curly Blonde) & Teté (Straight Blonde) -->
+                    <svg viewBox="0 0 120 120" class="w-full h-full object-cover">
+                        <!-- Background Circle -->
+                        <circle cx="60" cy="60" r="58" fill="#fcf0ff"/>
+                        <circle cx="60" cy="60" r="54" fill="url(#bgGrad)" />
+                        
+                        <defs>
+                            <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fbcfe8" />
+                                <stop offset="100%" stop-color="#e9d5ff" />
+                            </linearGradient>
+                            <linearGradient id="hairGold" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#fef08a" />
+                                <stop offset="50%" stop-color="#fde047" />
+                                <stop offset="100%" stop-color="#eab308" />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- LEFT GIRL: Lili (Curly Blonde) -->
+                        <g id="Lili-Curly">
+                            <!-- Skin -->
+                            <path d="M 35 45 C 35 60 52 60 52 45 Z" fill="#fde047" opacity="0"/>
+                            <ellipse cx="42" cy="50" rx="12" ry="14" fill="#fdedd6" />
+                            <!-- Neck/Shoulder -->
+                            <path d="M 35 62 Q 42 75 49 62 Z" fill="#fcd34d" opacity="0.2"/>
+                            <!-- Curly Blonde Hair Background -->
+                            <circle cx="33" cy="40" r="10" fill="url(#hairGold)"/>
+                            <circle cx="28" cy="48" r="9" fill="url(#hairGold)"/>
+                            <circle cx="31" cy="58" r="8" fill="url(#hairGold)"/>
+                            <circle cx="50" cy="38" r="9" fill="url(#hairGold)"/>
+                            <circle cx="42" cy="35" r="11" fill="url(#hairGold)"/>
+                            <circle cx="35" cy="32" r="10" fill="url(#hairGold)"/>
+                            <!-- Face features -->
+                            <!-- Eyes -->
+                            <ellipse cx="38" cy="48" rx="2" ry="2.5" fill="#3b0764"/>
+                            <ellipse cx="46" cy="48" rx="2" ry="2.5" fill="#3b0764"/>
+                            <!-- Pink Makeup Blush -->
+                            <circle cx="36" cy="52" r="3" fill="#f43f5e" opacity="0.4"/>
+                            <circle cx="48" cy="52" r="3" fill="#f43f5e" opacity="0.4"/>
+                            <!-- Glitter Eye Eyeshadow Lilac -->
+                            <path d="M 35 46 Q 38 43 41 46 Z" fill="#c084fc" />
+                            <path d="M 43 46 Q 46 43 49 46 Z" fill="#c084fc" />
+                            <!-- Smile -->
+                            <path d="M 40 55 Q 42 58 44 55" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- RIGHT GIRL: Teté (Straight Blonde) -->
+                        <g id="Tete-Straight">
+                            <!-- Straight Blonde Hair Back -->
+                            <path d="M 68 35 C 65 55 65 72 68 80 L 88 80 C 92 70 92 55 88 35 Z" fill="url(#hairGold)"/>
+                            <!-- Skin -->
+                            <ellipse cx="78" cy="50" rx="12" ry="14" fill="#fdedd6" />
+                            <!-- Straight Hair Bangs/Front -->
+                            <path d="M 66 42 Q 78 30 90 42 Q 85 32 78 32 Q 71 32 66 42 Z" fill="url(#hairGold)"/>
+                            <path d="M 67 40 L 68 62 L 72 44 Z" fill="url(#hairGold)"/>
+                            <path d="M 89 40 L 88 62 L 84 44 Z" fill="url(#hairGold)"/>
+                            <!-- Eyes -->
+                            <ellipse cx="73" cy="48" rx="2" ry="2.5" fill="#3b0764"/>
+                            <ellipse cx="82" cy="48" rx="2" ry="2.5" fill="#3b0764"/>
+                            <!-- Pink Eyeliner & Lilac Shadow -->
+                            <path d="M 70 46 Q 73 43 76 46 Z" fill="#f43f5e" />
+                            <path d="M 79 46 Q 82 43 85 46 Z" fill="#f43f5e" />
+                            <!-- Blush -->
+                            <circle cx="71" cy="52" r="3" fill="#ec4899" opacity="0.4"/>
+                            <circle cx="84" cy="52" r="3" fill="#ec4899" opacity="0.4"/>
+                            <!-- Smile -->
+                            <path d="M 75 55 Q 77.5 58 80 55" stroke="#e11d48" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- Sparkles around Logo -->
+                        <path d="M 60 20 L 62 25 L 67 27 L 62 29 L 60 34 L 58 29 L 53 27 L 58 25 Z" fill="#fff" opacity="0.9"/>
+                        <path d="M 22 75 L 23.5 78 L 27 79 L 23.5 80 L 22 83 L 20.5 80 L 17 79 L 20.5 78 Z" fill="#ffd700" opacity="0.9"/>
+                        <path d="M 98 70 L 99.5 73 L 103 74 L 99.5 75 L 98 78 L 96.5 75 L 93 74 L 96.5 73 Z" fill="#f0abfc" opacity="0.9"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-display text-xl sm:text-2xl font-bold bg-gradient-to-r from-rosa-600 via-lilas-600 to-rosa-500 bg-clip-text text-transparent group-hover:opacity-90 transition">
+                        Make com a Lili e Teté
+                    </span>
+                    <span class="block text-xs font-semibold text-lilas-600 tracking-wider uppercase">
+                        ✨ Lilás, Rosa & Glitter ✨
+                    </span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 font-semibold text-sm text-lilas-700">
+                <a href="#quiz-section" class="hover:text-rosa-600 transition flex items-center gap-1.5 bg-lilas-100/80 px-3 py-1.5 rounded-full border border-lilas-200">
+                    <i class="fa-solid fa-wand-magic-sparkles text-rosa-500"></i>
+                    Quiz de Make
+                </a>
+                <a href="#studio-section" class="hover:text-rosa-600 transition">Studio Interativo</a>
+                <a href="#gallery-section" class="hover:text-rosa-600 transition">Galeria de Looks</a>
+                <a href="#products-section" class="hover:text-rosa-600 transition">Produtos Favoritos</a>
+                <a href="#tips-section" class="hover:text-rosa-600 transition">Dicas da Lili & Teté</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="flex items-center gap-3">
+                <a href="#quiz-section" class="glitter-btn text-white font-display font-semibold text-sm px-4 py-2.5 rounded-full shadow-md hover:shadow-lg flex items-center gap-2">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Fazer o Quiz</span>
+                </a>
+                <!-- Mobile menu toggle -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-lilas-700 text-xl p-2 rounded-lg hover:bg-lilas-100">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-lilas-200 px-6 py-4 space-y-3">
+            <a href="#quiz-section" onclick="toggleMobileMenu()" class="block text-lilas-800 font-semibold py-1">✨ Quiz de Make</a>
+            <a href="#studio-section" onclick="toggleMobileMenu()" class="block text-lilas-800 font-semibold py-1">💄 Studio Interativo</a>
+            <a href="#gallery-section" onclick="toggleMobileMenu()" class="block text-lilas-800 font-semibold py-1">🌸 Galeria de Looks</a>
+            <a href="#products-section" onclick="toggleMobileMenu()" class="block text-lilas-800 font-semibold py-1">🛍️ Produtos Recomendados</a>
+            <a href="#tips-section" onclick="toggleMobileMenu()" class="block text-lilas-800 font-semibold py-1">💡 Dicas de Beleza</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-12 lg:py-20 overflow-hidden">
+        <!-- Floating sparkle icons -->
+        <i class="fa-solid fa-sparkles text-rosa-300 text-3xl sparkle-star top-10 left-10"></i>
+        <i class="fa-solid fa-star text-lilas-300 text-2xl sparkle-star top-20 right-16" style="animation-delay: 1s;"></i>
+        <i class="fa-solid fa-heart text-rosa-400 text-xl sparkle-star bottom-12 left-1/4" style="animation-delay: 1.5s;"></i>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left text content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-rosa-100 to-lilas-100 border border-rosa-300 px-4 py-2 rounded-full text-rosa-700 font-bold text-xs sm:text-sm tracking-wide shadow-sm animate-bounce">
+                        <i class="fa-solid fa-crown text-yellow-500"></i>
+                        BEM-VINDA AO MUNDO DA MAKE LILÁS, ROSA & GLITTER!
+                    </div>
+
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-lilas-950 leading-tight">
+                        Descubra a make que faz você <span class="bg-gradient-to-r from-rosa-500 via-lilas-500 to-rosa-600 bg-clip-text text-transparent">brilhar de verdade!</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-lilas-800 font-medium max-w-2xl mx-auto lg:mx-0">
+                        Oi, lindona! Nós somos a <strong>Lili</strong> (dos cachos loiros cheios de atitude) e a <strong>Teté</strong> (do liso loiro super charmoso)! Criamos esse cantinho especial com tutoriais, studio de teste e um <strong>quiz interativo exclusivo</strong> para encontrar a combinação de lilás, rosa e purpurina perfeita pra você! 💕✨
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#quiz-section" class="w-full sm:w-auto glitter-btn text-white font-display text-lg font-bold px-8 py-4 rounded-2xl shadow-xl flex items-center justify-center gap-3 group">
+                            <i class="fa-solid fa-wand-magic-sparkles text-xl group-hover:rotate-12 transition transform"></i>
+                            <span>Descobrir minha Make (Quiz)</span>
+                        </a>
+
+                        <a href="#studio-section" class="w-full sm:w-auto glass-card hover:bg-white text-lilas-800 font-display text-lg font-bold px-7 py-4 rounded-2xl border-2 border-lilas-300 shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-palette text-rosa-500"></i>
+                            <span>Testar Cores no Studio</span>
+                        </a>
+                    </div>
+
+                    <!-- Host Badges -->
+                    <div class="pt-6 border-t border-lilas-200/60 flex flex-wrap justify-center lg:justify-start gap-6">
+                        <div class="flex items-center gap-3 bg-white/80 p-2.5 pr-4 rounded-full border border-rosa-200 shadow-sm">
+                            <span class="w-10 h-10 rounded-full bg-rosa-100 text-rosa-600 flex items-center justify-center text-lg font-bold">👑</span>
+                            <div class="text-left text-xs">
+                                <strong class="block text-lilas-900 font-display text-sm">Lili</strong>
+                                <span class="text-rosa-600">Loiro Cacheado & Make Glow</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-white/80 p-2.5 pr-4 rounded-full border border-lilas-200 shadow-sm">
+                            <span class="w-10 h-10 rounded-full bg-lilas-100 text-lilas-600 flex items-center justify-center text-lg font-bold">💖</span>
+                            <div class="text-left text-xs">
+                                <strong class="block text-lilas-900 font-display text-sm">Teté</strong>
+                                <span class="text-lilas-600">Loiro Liso & Delineado Glitter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Banner Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md bg-gradient-to-tr from-lilas-300 via-rosa-200 to-rosa-300 p-2 rounded-3xl shadow-2xl animate-pulse-glow">
+                        <div class="bg-white rounded-2xl p-6 text-center space-y-6 relative overflow-hidden">
+                            <!-- Background Sparkles pattern -->
+                            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-lilas-200 rounded-full blur-2xl opacity-50"></div>
+                            <div class="absolute -left-10 -top-10 w-40 h-40 bg-rosa-200 rounded-full blur-2xl opacity-50"></div>
+
+                            <span class="inline-block px-3 py-1 bg-rosa-100 text-rosa-600 font-bold text-xs rounded-full uppercase tracking-wider">
+                                ✨ Tendência da Semana
+                            </span>
+
+                            <div class="relative w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-rosa-100 to-lilas-200 p-2 shadow-inner flex items-center justify-center">
+                                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" onerror="this.src='https://placehold.co/400x400/e9d5ff/7e22ce?text=Make+Lili+e+Tete'" alt="Makeup Glitter Palette" class="w-full h-full object-cover rounded-full border-4 border-white shadow-md">
+                                <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-rosa-500 to-lilas-600 text-white p-3 rounded-full shadow-lg text-lg animate-bounce">
+                                    💄
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-lilas-900">
+                                    Combo Lilás Glam + Purpurina
+                                </h3>
+                                <p class="text-xs text-lilas-700 mt-1">
+                                    O look favorito da Lili e da Teté para bombar nas redes sociais!
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2 text-center pt-2 border-t border-lilas-100">
+                                <div class="bg-lilas-50 p-2 rounded-xl">
+                                    <span class="block font-bold text-rosa-600 text-sm">100%</span>
+                                    <span class="text-[10px] text-lilas-700">Brilho Chic</span>
+                                </div>
+                                <div class="bg-lilas-50 p-2 rounded-xl">
+                                    <span class="block font-bold text-lilas-600 text-sm">Lilás</span>
+                                    <span class="text-[10px] text-lilas-700">& Rosa Soft</span>
+                                </div>
+                                <div class="bg-lilas-50 p-2 rounded-xl">
+                                    <span class="block font-bold text-rosa-600 text-sm">Glitter</span>
+                                    <span class="text-[10px] text-lilas-700">Biodegradável</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section id="quiz-section" class="py-16 bg-gradient-to-b from-white/60 to-lilas-100/80 border-y border-rosa-200/60 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-rosa-600 bg-rosa-100 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-sparkles"></i> Quiz Exclusivo Lili & Teté
+                </span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-lilas-950 mt-3">
+                    Qual estilo de Make Lilás & Rosa com Glitter combina com você?
+                </h2>
+                <p class="text-sm sm:text-base text-lilas-700 mt-2">
+                    Responda a 5 perguntas rapidinhas e descubra o seu perfil de maquiagem ideal com um passo a passo completo!
+                </p>
+            </div>
+
+            <!-- Quiz Card Container -->
+            <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-xl relative border-2 border-lilas-300">
+                
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-center text-xs font-bold text-lilas-700 mb-2">
+                        <span id="quiz-progress-text">Pergunta 1 de 5</span>
+                        <span id="quiz-progress-percent">20%</span>
+                    </div>
+                    <div class="w-full h-3 bg-lilas-200 rounded-full overflow-hidden p-0.5">
+                        <div id="quiz-progress-bar" class="h-full bg-gradient-to-r from-rosa-400 via-lilas-500 to-rosa-500 rounded-full transition-all duration-500 w-1/5"></div>
+                    </div>
+                </div>
+
+                <!-- QUIZ CONTENT AREA -->
+                <div id="quiz-box">
+                    <!-- Dynamic Question Box (Populated by JS) -->
+                </div>
+
+                <!-- QUIZ RESULT AREA (Hidden by default) -->
+                <div id="quiz-result" class="hidden text-center space-y-6">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-rosa-400 to-lilas-500 text-white flex items-center justify-center text-4xl shadow-lg animate-bounce">
+                        ✨
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-rosa-600 bg-rosa-100 px-3 py-1 rounded-full" id="result-badge">
+                            Seu Resultado Perfeito
+                        </span>
+                        <h3 class="font-display text-3xl font-extrabold text-lilas-950" id="result-title">
+                            Glow Queen Lilás & Rosa
+                        </h3>
+                        <p class="text-sm sm:text-base text-lilas-800 max-w-lg mx-auto" id="result-description">
+                            Você ama destacar o olhar com tons pastel modernos e dar aquele toque mágico de glitter holofote sem perder a delicadeza!
+                        </p>
+                    </div>
+
+                    <!-- Steps / Tutorial Card for Result -->
+                    <div class="bg-white/90 rounded-2xl p-6 text-left border border-lilas-200 shadow-sm space-y-4">
+                        <h4 class="font-display font-bold text-lilas-900 text-lg flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-rosa-500"></i>
+                            Passo a Passo da sua Make Ideal:
+                        </h4>
+                        <ol id="result-steps" class="space-y-2 text-xs sm:text-sm text-lilas-800 list-decimal list-inside font-medium">
+                            <!-- Steps dynamically inserted -->
+                        </ol>
+
+                        <div class="pt-3 border-t border-lilas-100">
+                            <strong class="text-xs font-bold text-lilas-900 block mb-2">🛍️ Items Essenciais para essa Make:</strong>
+                            <div id="result-products" class="flex flex-wrap gap-2">
+                                <!-- Tags inserted -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                        <button onclick="resetQuiz()" class="glitter-btn text-white font-display font-bold px-6 py-3 rounded-xl shadow-md">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Refazer o Quiz
+                        </button>
+                        <button onclick="shareResult()" class="bg-white hover:bg-lilas-50 text-lilas-800 border border-lilas-300 font-display font-bold px-6 py-3 rounded-xl shadow-sm transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-share-nodes text-rosa-500"></i> Compartilhar Resultado
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDIO INTERATIVO (MAKEUP SIMULATOR) -->
+    <section id="studio-section" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-lilas-600 bg-lilas-100 px-3 py-1 rounded-full">
+                🎨 Studio da Lili & Teté
+            </span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-lilas-950 mt-3">
+                Simulador de Make Interativo
+            </h2>
+            <p class="text-sm sm:text-base text-lilas-700 mt-2">
+                Combine tons de sombra lilás, gloss rosa e intensidades de glitter para ver como fica na prática!
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center bg-white/80 rounded-3xl p-6 sm:p-8 border-2 border-lilas-200 shadow-xl">
+            
+            <!-- Controls Panel -->
+            <div class="lg:col-span-6 space-y-6">
+                <div>
+                    <label class="font-display text-sm font-bold text-lilas-900 block mb-2">
+                        1. Cor de Sombra Principal:
+                    </label>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button onclick="setShadowColor('#c084fc', 'Lilás Soft')" class="p-3 rounded-xl border-2 border-transparent hover:border-rosa-400 bg-purple-300 text-xs font-bold text-purple-900 transition flex flex-col items-center gap-1">
+                            <span class="w-6 h-6 rounded-full bg-purple-400 border border-white"></span>
+                            Lilás Soft
+                        </button>
+                        <button onclick="setShadowColor('#f43f5e', 'Rosa Chiclete')" class="p-3 rounded-xl border-2 border-transparent hover:border-rosa-400 bg-rose-200 text-xs font-bold text-rose-900 transition flex flex-col items-center gap-1">
+                            <span class="w-6 h-6 rounded-full bg-rose-500 border border-white"></span>
+                            Rosa Chiclete
+                        </button>
+                        <button onclick="setShadowColor('#7e22ce', 'Violeta Night')" class="p-3 rounded-xl border-2 border-transparent hover:border-rosa-400 bg-purple-900 text-xs font-bold text-purple-100 transition flex flex-col items-center gap-1">
+                            <span class="w-6 h-6 rounded-full bg-purple-700 border border-white"></span>
+                            Violeta Deep
+                        </button>
+                        <button onclick="setShadowColor('#ec4899', 'Pink Glam')" class="p-3 rounded-xl border-2 border-transparent hover:border-rosa-400 bg-pink-300 text-xs font-bold text-pink-900 transition flex flex-col items-center gap-1">
+                            <span class="w-6 h-6 rounded-full bg-pink-500 border border-white"></span>
+                            Pink Glam
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="font-display text-sm font-bold text-lilas-900 block mb-2">
+                        2. Tom de Gloss / Batom:
+                    </label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="setLipColor('#fb7185', 'Gloss Rosa Nude')" class="p-2.5 rounded-xl border bg-rose-100 text-xs font-bold text-rose-900">
+                            💋 Rosa Nude
+                        </button>
+                        <button onclick="setLipColor('#e11d48', 'Pink Intenso')" class="p-2.5 rounded-xl border bg-rose-200 text-xs font-bold text-rose-900">
+                            💄 Pink Intenso
+                        </button>
+                        <button onclick="setLipColor('#a855f7', 'Lilás Mágico')" class="p-2.5 rounded-xl border bg-purple-100 text-xs font-bold text-purple-900">
+                            ✨ Lilás Gloss
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="font-display text-sm font-bold text-lilas-900 block mb-2">
+                        3. Intensidade do Glitter ✨:
+                    </label>
+                    <input type="range" id="glitterRange" min="0" max="100" value="70" oninput="updateGlitterIntensity(this.value)" class="w-full accent-rosa-500 cursor-pointer">
+                    <div class="flex justify-between text-xs text-lilas-700 font-semibold mt-1">
+                        <span>Suave</span>
+                        <span>Moderado</span>
+                        <span class="text-rosa-600 font-bold">Explosão Glitter!</span>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-lilas-50 rounded-2xl border border-lilas-200">
+                    <span class="text-xs font-bold uppercase text-rosa-600 block">Combinação Atual:</span>
+                    <p id="studio-combo-text" class="text-sm font-bold text-lilas-900 mt-1">
+                        Sombra Lilás Soft + Gloss Rosa Nude com 70% de Glitter ✨
+                    </p>
+                </div>
+            </div>
+
+            <!-- Virtual Face Preview SVG Canvas -->
+            <div class="lg:col-span-6 flex flex-col items-center justify-center p-4">
+                <div class="relative w-64 h-80 sm:w-72 sm:h-96 bg-gradient-to-b from-rosa-100 to-lilas-100 rounded-3xl border-4 border-white shadow-xl p-4 flex items-center justify-center overflow-hidden">
+                    
+                    <!-- SVG Avatar Face for Makeup Preview -->
+                    <svg viewBox="0 0 200 240" class="w-full h-full">
+                        <!-- Hair Background -->
+                        <path d="M 40 70 Q 100 10 160 70 Q 180 140 160 210 Q 100 230 40 210 Q 20 140 40 70 Z" fill="#fde047" />
+                        
+                        <!-- Face Base -->
+                        <ellipse cx="100" cy="120" rx="50" ry="65" fill="#fdedd6" />
+                        
+                        <!-- Eyelids / Shadow Layer (Dynamic Color) -->
+                        <path id="preview-shadow-left" d="M 70 102 Q 80 88 92 102 Z" fill="#c084fc" opacity="0.85" />
+                        <path id="preview-shadow-right" d="M 108 102 Q 120 88 130 102 Z" fill="#c084fc" opacity="0.85" />
+                        
+                        <!-- Glitter Particles Layer -->
+                        <g id="preview-glitter-layer" opacity="0.7">
+                            <circle cx="75" cy="95" r="2" fill="#ffffff" />
+                            <circle cx="82" cy="98" r="1.5" fill="#ffd700" />
+                            <circle cx="88" cy="94" r="2" fill="#ffffff" />
+                            <circle cx="112" cy="95" r="2" fill="#ffffff" />
+                            <circle cx="118" cy="98" r="1.5" fill="#ffd700" />
+                            <circle cx="125" cy="94" r="2" fill="#ffffff" />
+                        </g>
+
+                        <!-- Eyes -->
+                        <ellipse cx="81" cy="105" rx="6" ry="7" fill="#3b0764" />
+                        <ellipse cx="119" cy="105" rx="6" ry="7" fill="#3b0764" />
+                        <circle cx="79" cy="103" r="2" fill="#ffffff" />
+                        <circle cx="117" cy="103" r="2" fill="#ffffff" />
+
+                        <!-- Eyeliner Wings -->
+                        <path d="M 68 105 Q 81 99 93 105" stroke="#1e1b4b" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                        <path d="M 107 105 Q 119 99 132 105" stroke="#1e1b4b" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                        <path d="M 93 105 L 97 100" stroke="#1e1b4b" stroke-width="2" stroke-linecap="round" />
+                        <path d="M 132 105 L 136 100" stroke="#1e1b4b" stroke-width="2" stroke-linecap="round" />
+
+                        <!-- Blush -->
+                        <ellipse cx="72" cy="125" rx="10" ry="6" fill="#f43f5e" opacity="0.35" />
+                        <ellipse cx="128" cy="125" rx="10" ry="6" fill="#f43f5e" opacity="0.35" />
+
+                        <!-- Nose -->
+                        <path d="M 100 112 Q 98 122 102 122" stroke="#d97706" stroke-width="1.5" fill="none" opacity="0.4" />
+
+                        <!-- Lips (Dynamic Lip Color) -->
+                        <path id="preview-lips" d="M 88 142 Q 100 135 112 142 Q 100 155 88 142 Z" fill="#fb7185" />
+                        <!-- Lip Gloss Highlight -->
+                        <ellipse cx="96" cy="142" rx="3" ry="1.5" fill="#ffffff" opacity="0.7" />
+
+                        <!-- Front Bangs/Hair Overlay -->
+                        <path d="M 50 80 Q 100 40 150 80 Q 130 50 100 50 Q 70 50 50 80 Z" fill="#fde047" />
+                    </svg>
+
+                    <!-- Overlay Label -->
+                    <span class="absolute bottom-3 bg-white/90 px-3 py-1 rounded-full text-[11px] font-bold text-lilas-900 shadow">
+                        ✨ Preview em Tempo Real
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALERIA DE LOOKS DE MAQUIAGEM -->
+    <section id="gallery-section" class="py-16 bg-gradient-to-b from-lilas-100/50 to-rosa-100/40 border-t border-rosa-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-rosa-600 bg-rosa-100 px-3 py-1 rounded-full">
+                    📸 Inspirações Reais
+                </span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-lilas-950 mt-3">
+                    Galeria de Makes da Lili & Teté
+                </h2>
+                <p class="text-sm sm:text-base text-lilas-700 mt-2">
+                    Escolha o look que mais curtir para ver os truques e segredinhos de aplicação!
+                </p>
+            </div>
+
+            <!-- Look Cards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Look Card 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group border-2 border-rosa-200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x600/f3e8ff/9333ea?text=Look+Lilas+Glow'" alt="Make Lilás Soft" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-rosa-500 text-white font-bold text-xs px-3 py-1 rounded-full shadow">
+                            Favorito da Lili 👑
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-display text-xl font-bold text-lilas-950">
+                            Lilás Soft Sunset + Gloss Pink
+                        </h3>
+                        <p class="text-xs text-lilas-700">
+                            Esfumado lilás pastel com degradê suave e ponto de luz rosa cintilante no canto interno.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-lilas-100 text-xs">
+                            <span class="text-rosa-600 font-bold">✨ Nível de Glitter: Médio</span>
+                            <button onclick="openLookModal('Lilás Soft Sunset', 'Aplique uma sombra lilás em toda a pálpebra móvel, esfume as bordas com um tom rosa claro e finalize selando o centro da pálpebra com glitter prensado fininho.')" class="text-lilas-700 font-bold hover:underline flex items-center gap-1">
+                                Como Fazer <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Look Card 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group border-2 border-lilas-200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x600/ffe4e6/be123c?text=Delineado+Rosa+Glitter'" alt="Delineado Rosa com Glitter" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-lilas-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow">
+                            Favorito da Teté 💖
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-display text-xl font-bold text-lilas-950">
+                            Delineado Gatinho Rosa Holográfico
+                        </h3>
+                        <p class="text-xs text-lilas-700">
+                            Traço de delineado magenta bem marcado coberto por uma fina camada de glitter holofote lilás.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-lilas-100 text-xs">
+                            <span class="text-lilas-600 font-bold">✨ Nível de Glitter: Alto</span>
+                            <button onclick="openLookModal('Delineado Rosa Holográfico', 'Faça o traço de gatinho tradicional usando delineador líquido rosa. Antes de secar totalmente, dê leve batidinhas com pincel fino depositando pigmento e glitter lilás.')" class="text-lilas-700 font-bold hover:underline flex items-center gap-1">
+                                Como Fazer <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Look Card 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group border-2 border-rosa-200">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x600/f5e6fa/7e22ce?text=Glitter+Festival'" alt="Festival Glitter Bomb" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-4 left-4 bg-yellow-500 text-white font-bold text-xs px-3 py-1 rounded-full shadow">
+                            Especial Festival 🎉
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="font-display text-xl font-bold text-lilas-950">
+                            Explosão Glitter Fest Lilás & Pink
+                        </h3>
+                        <p class="text-xs text-lilas-700">
+                            Sombra em degradê rosa e lilás estendida até as témporas com flocos de glitter estrelado.
+                        </p>
+                        <div class="flex items-center justify-between pt-2 border-t border-lilas-100 text-xs">
+                            <span class="text-rosa-600 font-bold">✨ Nível de Glitter: Máximo</span>
+                            <button onclick="openLookModal('Explosão Glitter Fest', 'Prepare a região acima das bochechas com primer de glitter ou fixador. Aplique flocos maiores de glitter biodegradável misturando lilás e rosa até a têmpora.')" class="text-lilas-700 font-bold hover:underline flex items-center gap-1">
+                                Como Fazer <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VITRINE DE PRODUTOS RECOMENDADOS -->
+    <section id="products-section" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-lilas-600 bg-lilas-100 px-3 py-1 rounded-full">
+                🛍️ Queridinhos da Nécessaire
+            </span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-lilas-950 mt-3">
+                Produtos Aprovados pela Lili e Teté
+            </h2>
+            <p class="text-sm sm:text-base text-lilas-700 mt-2">
+                Paletas, batons e glitters incríveis para você reproduzir todas as makes!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            
+            <!-- Product 1 -->
+            <div class="bg-white rounded-2xl p-4 border border-lilas-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="relative bg-lilas-50 rounded-xl p-3 mb-3 text-center">
+                        <span class="absolute top-2 left-2 text-[10px] font-bold bg-rosa-100 text-rosa-600 px-2 py-0.5 rounded-full">Paleta</span>
+                        <img src="https://images.unsplash.com/photo-1583241800698-e8ab01c85b27?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/e9d5ff/7e22ce?text=Paleta+Glitter'" alt="Paleta Lilás Magic" class="w-28 h-28 mx-auto object-contain">
+                    </div>
+                    <h4 class="font-display font-bold text-sm text-lilas-950">Paleta Lilás & Pink Galaxy</h4>
+                    <p class="text-[11px] text-lilas-700 mt-1">12 cores vibrantes + 4 glitters prensados.</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-lilas-100 flex items-center justify-between">
+                    <span class="font-bold text-rosa-600 text-sm">R$ 59,90</span>
+                    <button onclick="toggleFav(this)" class="w-8 h-8 rounded-full bg-lilas-100 text-lilas-600 hover:bg-rosa-100 hover:text-rosa-600 transition flex items-center justify-center text-xs">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-2xl p-4 border border-lilas-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="relative bg-rosa-50 rounded-xl p-3 mb-3 text-center">
+                        <span class="absolute top-2 left-2 text-[10px] font-bold bg-lilas-100 text-lilas-600 px-2 py-0.5 rounded-full">Gloss</span>
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/fecdd3/e11d48?text=Gloss+Pink'" alt="Gloss Sparkle Pink" class="w-28 h-28 mx-auto object-contain">
+                    </div>
+                    <h4 class="font-display font-bold text-sm text-lilas-950">Gloss Ultra Sparkle Pink</h4>
+                    <p class="text-[11px] text-lilas-700 mt-1">Efeito espelhado com micropartículas de brilho.</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-lilas-100 flex items-center justify-between">
+                    <span class="font-bold text-rosa-600 text-sm">R$ 34,90</span>
+                    <button onclick="toggleFav(this)" class="w-8 h-8 rounded-full bg-lilas-100 text-lilas-600 hover:bg-rosa-100 hover:text-rosa-600 transition flex items-center justify-center text-xs">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-2xl p-4 border border-lilas-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="relative bg-lilas-50 rounded-xl p-3 mb-3 text-center">
+                        <span class="absolute top-2 left-2 text-[10px] font-bold bg-rosa-100 text-rosa-600 px-2 py-0.5 rounded-full">Pigmento</span>
+                        <img src="https://images.unsplash.com/photo-1599733589046-10c005739ef9?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/f5e6fa/a855f7?text=Glitter+Lilas'" alt="Glitter Solto Lilás" class="w-28 h-28 mx-auto object-contain">
+                    </div>
+                    <h4 class="font-display font-bold text-sm text-lilas-950">Pigmento Glitter Lilás Star</h4>
+                    <p class="text-[11px] text-lilas-700 mt-1">Glitter solto ultrafino biodegradável.</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-lilas-100 flex items-center justify-between">
+                    <span class="font-bold text-rosa-600 text-sm">R$ 28,00</span>
+                    <button onclick="toggleFav(this)" class="w-8 h-8 rounded-full bg-lilas-100 text-lilas-600 hover:bg-rosa-100 hover:text-rosa-600 transition flex items-center justify-center text-xs">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-white rounded-2xl p-4 border border-lilas-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="relative bg-rosa-50 rounded-xl p-3 mb-3 text-center">
+                        <span class="absolute top-2 left-2 text-[10px] font-bold bg-lilas-100 text-lilas-600 px-2 py-0.5 rounded-full">Iluminador</span>
+                        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=300&q=80" onerror="this.src='https://placehold.co/300x300/ffe4e6/9333ea?text=Iluminador+Glow'" alt="Iluminador Rosé Lilás" class="w-28 h-28 mx-auto object-contain">
+                    </div>
+                    <h4 class="font-display font-bold text-sm text-lilas-950">Iluminador Duocromo Rosé</h4>
+                    <p class="text-[11px] text-lilas-700 mt-1">Muda de tom do rosa para o lilás conforme a luz.</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-lilas-100 flex items-center justify-between">
+                    <span class="font-bold text-rosa-600 text-sm">R$ 42,50</span>
+                    <button onclick="toggleFav(this)" class="w-8 h-8 rounded-full bg-lilas-100 text-lilas-600 hover:bg-rosa-100 hover:text-rosa-600 transition flex items-center justify-center text-xs">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DICAS DA LILI E TETÉ -->
+    <section id="tips-section" class="py-16 bg-gradient-to-r from-lilas-200/50 via-rosa-100/50 to-lilas-200/50 border-t border-lilas-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-lilas-700 bg-white px-3 py-1 rounded-full shadow-sm">
+                    💡 Segredinhos de Make
+                </span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-lilas-950 mt-3">
+                    Dicas Infalíveis da Lili & Teté
+                </h2>
+                <p class="text-sm sm:text-base text-lilas-700 mt-2">
+                    Aprenda a colar glitter sem sujeira e a transicionar do lilás pro rosa como uma profissional!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Tip Card 1 -->
+                <div class="glass-card rounded-2xl p-6 space-y-3 relative overflow-hidden">
+                    <span class="text-3xl">✨</span>
+                    <h3 class="font-display font-bold text-lg text-lilas-950">Dica da Lili: Colar Glitter Sem Sujeira</h3>
+                    <p class="text-xs text-lilas-800 leading-relaxed">
+                        Use uma gotinha de bruma fixadora ou balm labial incolor na pálpebra antes de aplicar o glitter com o próprio dedo, pressionando devagarzinho em vez de esfregar!
+                    </p>
+                </div>
+
+                <!-- Tip Card 2 -->
+                <div class="glass-card rounded-2xl p-6 space-y-3 relative overflow-hidden">
+                    <span class="text-3xl">🎨</span>
+                    <h3 class="font-display font-bold text-lg text-lilas-950">Dica da Teté: O Esfumado Perfeito</h3>
+                    <p class="text-xs text-lilas-800 leading-relaxed">
+                        Comece sempre pelo tom mais claro (o rosa chiclete) no côncavo e venha depositando o lilás mais escuro no canto externo com um pincel bem fofinho em movimentos circulares.
+                    </p>
+                </div>
+
+                <!-- Tip Card 3 -->
+                <div class="glass-card rounded-2xl p-6 space-y-3 relative overflow-hidden">
+                    <span class="text-3xl">💄</span>
+                    <h3 class="font-display font-bold text-lg text-lilas-950">Boca Volumosa Glossy Pink</h3>
+                    <p class="text-xs text-lilas-800 leading-relaxed">
+                        Contorne os lábios com lápis rosa levemente mais escuro, preencha o centro com gloss lilás e dê um toque de iluminador no arco do cupido para efeito volumoso instantâneo!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto bg-lilas-950 text-lilas-200 py-12 border-t-4 border-rosa-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-rosa-500 text-white flex items-center justify-center font-display font-bold text-xl shadow-lg">
+                        ✨
+                    </div>
+                    <div>
+                        <span class="font-display text-xl font-bold text-white block">Make com a Lili e Teté</span>
+                        <span class="text-xs text-rosa-300">Seu canal favorito de brilho, lilás e rosa! 💕</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 text-xl">
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilas-900 hover:bg-rosa-500 hover:text-white transition flex items-center justify-center text-rosa-300"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilas-900 hover:bg-rosa-500 hover:text-white transition flex items-center justify-center text-rosa-300"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-lilas-900 hover:bg-rosa-500 hover:text-white transition flex items-center justify-center text-rosa-300"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="text-center text-xs text-lilas-400 pt-6 border-t border-lilas-800">
+                <p>© 2026 Make com a Lili e Teté. Todos os direitos reservados. Feito com muito glitter & carinho!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOOK DETAIL MODAL -->
+    <div id="look-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border-2 border-rosa-300 shadow-2xl relative space-y-4">
+            <button onclick="closeLookModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="text-xs font-bold uppercase tracking-wider text-rosa-600 bg-rosa-100 px-3 py-1 rounded-full">
+                ✨ Passo a Passo Exclusivo
+            </span>
+            <h3 id="modal-title" class="font-display text-2xl font-bold text-lilas-950"></h3>
+            <p id="modal-desc" class="text-xs sm:text-sm text-lilas-800 leading-relaxed"></p>
+            <button onclick="closeLookModal()" class="w-full glitter-btn text-white font-display font-bold py-3 rounded-xl">
+                Entendi! Vou Arrasar 💕
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // QUIZ DATA & LOGIC
+        const quizQuestions = [
+            {
+                question: "1. Qual é o seu rolê perfeito no fim de semana?",
+                options: [
+                    { text: "Festa animada ou festival com muito brilho!", score: "glitter" },
+                    { text: "Encontro fofo ou passeio no parque", score: "romantic" },
+                    { text: "Sessão de fotos para o Insta e TikTok", score: "cyber" },
+                    { text: "Café com as amigas e comprinhas", score: "soft" }
+                ]
+            },
+            {
+                question: "2. Quando você pensa em maquiagem, o que não pode faltar?",
+                options: [
+                    { text: "Glitter solto e purpurina chamativa", score: "glitter" },
+                    { text: "Gloss rosa super hidratante e blush chinelada", score: "romantic" },
+                    { text: "Sombra lilás intensa com delineado marcante", score: "cyber" },
+                    { text: "Um iluminador leve e sombra pastel delicada", score: "soft" }
+                ]
+            },
+            {
+                question: "3. Qual é a sua cor preferida no coração?",
+                options: [
+                    { text: "Mistura de lilás com purpurina prata!", score: "glitter" },
+                    { text: "Rosa chiclete e tons florais", score: "romantic" },
+                    { text: "Violeta elétrico e magenta", score: "cyber" },
+                    { text: "Lilás lavanda bem suave", score: "soft" }
+                ]
+            },
+            {
+                question: "4. Quanto tempo você gosta de passar se maquiando?",
+                options: [
+                    { text: "Mais de 40 min criando uma verdadeira arte com glitter", score: "glitter" },
+                    { text: "20 min para ficar bem menininha e fofa", score: "romantic" },
+                    { text: "30 min focando no esfumado e delineado perfeito", score: "cyber" },
+                    { text: "10 a 15 min rapidinho pro dia a dia", score: "soft" }
+                ]
+            },
+            {
+                question: "5. Se a Lili e a Teté te dessem um presente, qual escolheria?",
+                options: [
+                    { text: "Kit com 10 potinhos de glitter biodegradável holográfico", score: "glitter" },
+                    { text: "Coleção completa de gloss pink com efeito espelhado", score: "romantic" },
+                    { text: "Paleta profissional de sombras lilás e pincéis precisos", score: "cyber" },
+                    { text: "Iluminador duocromo lilás e batom nude rosa", score: "soft" }
+                ]
+            }
+        ];
+
+        const quizResults = {
+            glitter: {
+                badge: "🌟 Perfil: Rainha do Glitter",
+                title: "Glitter Queen Lilás & Pink 🎉",
+                desc: "Você é extravagante, alto astral e ama ser o centro das atenções! Para você, glitter nunca é demais.",
+                steps: [
+                    "Aplique primer fixador de glitter nas pálpebras e no alto das maçãs do rosto.",
+                    "Esfume sombra rosa chiclete no côncavo como base.",
+                    "Deposite flocos de glitter holográfico lilás por cima da sombra.",
+                    "Finalize com batom pink e um gloss transparente recheado de brilho."
+                ],
+                products: ["Pigmento Glitter Solto", "Paleta 12 Cores", "Bruma Fixadora Glow"]
+            },
+            romantic: {
+                badge: "🌸 Perfil: Romântica Chic",
+                title: "Soft Princess Rosa Glossy 💕",
+                desc: "Você ama um visual fofo, delicado e bem menininha com lábios super brilhantes e tom rosa marcante.",
+                steps: [
+                    "Esfume sombra rosa pastel suave por toda a pálpebra móvel.",
+                    "Capriche no blush rosa nas bochechas para efeito carinha de saúde.",
+                    "Aplique ponto de luz lilás cintilante no canto interno dos olhos.",
+                    "Preencha os lábios com o Gloss Ultra Sparkle Pink."
+                ],
+                products: ["Gloss Pink Sparkle", "Blush Rosé", "Sombra Iluminadora"]
+            },
+            cyber: {
+                badge: "⚡ Perfil: Pop Star Glam",
+                title: "Diva Holofote Violeta & Delineado 💜",
+                desc: "Você é moderna, antenada e adora maquiagens com técnica, contraste marcante e delineados incríveis!",
+                steps: [
+                    "Crie um esfumado profundo usando sombra violeta intensa no canto externo.",
+                    "Faça um delineado gatinho afiado com lápis rosa ou delineador magenta.",
+                    "Aplique glitter fino lilás selando o centro dos olhos.",
+                    "Batom matte lilás suave para um visual marcante e elegante."
+                ],
+                products: ["Delineador Rosa", "Paleta Galaxy Lilás", "Batom Lilás Soft"]
+            },
+            soft: {
+                badge: "✨ Perfil: Glow Natural",
+                title: "Clean Girl Lilás Light ✨",
+                desc: "Você prefere uma maquiagem rápida, iluminada e fresca, destacando sua beleza natural com um toque de luz.",
+                steps: [
+                    "Passe uma camada leve de sombra lilás pastel usando a ponta dos dedos.",
+                    "Aplique iluminador duocromo rosé no topo das bochechas e ponta do nariz.",
+                    "Máscara de cílios para abrir o olhar.",
+                    "Lip balm rosa com suave brilho para lábios hidratados."
+                ],
+                products: ["Iluminador Duocromo", "Sombra Lilás Mono", "Lip Balm Gloss"]
+            }
+        };
+
+        let currentQuestion = 0;
+        let userScores = { glitter: 0, romantic: 0, cyber: 0, soft: 0 };
+
+        function renderQuestion() {
+            const quizBox = document.getElementById('quiz-box');
+            const q = quizQuestions[currentQuestion];
+
+            // Update Progress
+            const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
+            document.getElementById('quiz-progress-text').innerText = `Pergunta ${currentQuestion + 1} de ${quizQuestions.length}`;
+            document.getElementById('quiz-progress-percent').innerText = `${Math.round(progress)}%`;
+            document.getElementById('quiz-progress-bar').style.width = `${progress}%`;
+
+            let html = `
+                <div class="space-y-6">
+                    <h3 class="font-display text-xl sm:text-2xl font-bold text-lilas-950">${q.question}</h3>
+                    <div class="grid sm:grid-cols-2 gap-3">
+            `;
+
+            q.options.forEach((opt, idx) => {
+                html += `
+                    <button onclick="selectOption('${opt.score}')" class="p-4 rounded-2xl bg-white hover:bg-rosa-50 border-2 border-lilas-200 hover:border-rosa-400 text-left font-semibold text-sm text-lilas-900 transition flex items-center justify-between group shadow-sm">
+                        <span>${opt.text}</span>
+                        <i class="fa-solid fa-circle-chevron-right text-lilas-300 group-hover:text-rosa-500 transition"></i>
+                    </button>
+                `;
+            });
+
+            html += `</div></div>`;
+            quizBox.innerHTML = html;
+        }
+
+        function selectOption(scoreKey) {
+            userScores[scoreKey]++;
+            if (currentQuestion < quizQuestions.length - 1) {
+                currentQuestion++;
+                renderQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('quiz-box').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+
+            // Find key with max score
+            let maxKey = 'glitter';
+            let maxScore = -1;
+            for (let k in userScores) {
+                if (userScores[k] > maxScore) {
+                    maxScore = userScores[k];
+                    maxKey = k;
+                }
+            }
+
+            const res = quizResults[maxKey];
+            document.getElementById('result-badge').innerText = res.badge;
+            document.getElementById('result-title').innerText = res.title;
+            document.getElementById('result-description').innerText = res.desc;
+
+            // Render steps
+            const stepsList = document.getElementById('result-steps');
+            stepsList.innerHTML = res.steps.map(s => `<li class="py-1">${s}</li>`).join('');
+
+            // Render products
+            const prodList = document.getElementById('result-products');
+            prodList.innerHTML = res.products.map(p => `<span class="bg-lilas-100 text-lilas-800 text-xs font-bold px-3 py-1 rounded-full border border-lilas-200">💄 ${p}</span>`).join('');
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            userScores = { glitter: 0, romantic: 0, cyber: 0, soft: 0 };
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-box').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        function shareResult() {
+            const title = document.getElementById('result-title').innerText;
+            const shareText = `Fiz o quiz no site "Make com a Lili e Teté" e meu resultado foi: ${title}! ✨💕 Venha descobrir a sua make lilás e rosa ideal!`;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(shareText);
+                alert("Resultado copiado para a área de transferência! Cole no seu WhatsApp ou redes sociais 💕");
+            } else {
+                // Fallback using execCommand
+                const dummy = document.createElement("textarea");
+                document.body.appendChild(dummy);
+                dummy.value = shareText;
+                dummy.select();
+                document.execCommand("copy");
+                document.body.removeChild(dummy);
+                alert("Resultado copiado para a área de transferência! 💕");
+            }
+        }
+
+        // VIRTUAL STUDIO SIMULATOR LOGIC
+        let currentShadow = "Lilás Soft";
+        let currentLip = "Gloss Rosa Nude";
+        let currentGlitter = "70%";
+
+        function setShadowColor(hex, name) {
+            document.getElementById('preview-shadow-left').setAttribute('fill', hex);
+            document.getElementById('preview-shadow-right').setAttribute('fill', hex);
+            currentShadow = name;
+            updateStudioText();
+        }
+
+        function setLipColor(hex, name) {
+            document.getElementById('preview-lips').setAttribute('fill', hex);
+            currentLip = name;
+            updateStudioText();
+        }
+
+        function updateGlitterIntensity(val) {
+            const opacity = val / 100;
+            document.getElementById('preview-glitter-layer').setAttribute('opacity', opacity);
+            currentGlitter = `${val}%`;
+            updateStudioText();
+        }
+
+        function updateStudioText() {
+            document.getElementById('studio-combo-text').innerText = 
+                `Sombra ${currentShadow} + ${currentLip} com ${currentGlitter} de Glitter ✨`;
+        }
+
+        // LOOK MODAL LOGIC
+        function openLookModal(title, desc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            const modal = document.getElementById('look-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLookModal() {
+            const modal = document.getElementById('look-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // TOGGLE FAVORITE PRODUCT
+        function toggleFav(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                btn.classList.add('text-rosa-600', 'bg-rosa-100');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                btn.classList.remove('text-rosa-600', 'bg-rosa-100');
+            }
+        }
+
+        // Initialize quiz on window load
+        window.onload = function() {
+            renderQuestion();
+        };
+    </script>
+</body>
+</html>
